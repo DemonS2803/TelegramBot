@@ -13,4 +13,6 @@ public class TelegramUtil {
             "**/music - gives you a random music**\n" +
             "/users stats [user_id] - gives user statistics";
 
+    public static final String TASK_CREATED = "Your task was created as available order. You will be informed when somebody will accept it.\n" +
+            "taskId: {}";
 }

@@ -34,25 +34,23 @@ public class UserService {
         }
     }
 
-    public boolean updateUserContacts(User user, String contacts) {
+    public boolean updateUserContacts(Long chatId, String contacts) {
         try {
-            user.setContacts(contacts);
-            userRepository.save(user);
+            userRepository.updateUserContacts(chatId, contacts);
             return true;
         } catch (Exception e) {
-            System.out.println("smth went wrong while updating user contacts " + user.getChatId());
+            System.out.println("smth went wrong while updating user contacts " + chatId);
             e.printStackTrace();
             return false;
         }
     }
 
-    public boolean updateUsername(User user, String username) {
+    public boolean updateUsername(Long chatId, String username) {
         try {
-            user.setUsername(username);
-            userRepository.save(user);
+            userRepository.updateUsername(chatId, username);
             return true;
         } catch (Exception e) {
-            System.out.println("smth went wrong while updating user name " + user.getChatId());
+            System.out.println("smth went wrong while updating user name " + chatId);
             e.printStackTrace();
             return false;
         }

@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @Builder
@@ -20,4 +22,9 @@ public class User {
     private Long chatId;
     private String username;
     private String contacts;
+    @OneToMany
+    private List<Job> orderedJobs;
+//    @OneToMany
+//    private List<Job> executingJobs;
+
 }
